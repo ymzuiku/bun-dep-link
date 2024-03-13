@@ -1,8 +1,13 @@
+#!/usr/bin/env bun
+
 import * as fs from "node:fs/promises";
 import { $ } from "bun";
+import path from "node:path";
+
+const p = (...args: string[]) => path.resolve(process.cwd(), ...args);
 
 async function start() {
-	const pkgString = (await fs.readFile("package.json", "utf8")).toString();
+	const pkgString = (await fs.readFile(p("package.json"), "utf8")).toString();
 
 	const pkg = JSON.parse(pkgString);
 	const githubDependencies = pkg.githubDependencies || {};
@@ -54,7 +59,7 @@ async function start() {
 		process.exit(0);
 	}
 
-	await fs.writeFile("package.json", JSON.stringify(pkg, null, 2));
+	await fs.writeFile(p("package.json"), JSON.stringify(pkg, null, 2));
 	if (changed) {
 		await $`bun install`;
 	}

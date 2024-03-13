@@ -1,11 +1,11 @@
 # bun-dep-link
 
-switch bun dep or github
+Switch bun dep or github
 
 ## Feature
 
-- `bun-dep --github` : dependencies use bun link,
-- `bun-dep --link`: dependencies use github link,
+- `bunx --bun bun-dep-link --github` : dependencies use bun link,
+- `bunx --bun bun-dep-link --link`: dependencies use github link,
 
 ## Config
 
@@ -24,6 +24,8 @@ package.json add:
 
 ```json
 "scripts": {
-  "pre-commit": "bunx dep-github && bun test && bunx dep-link"
+  "github":"bunx --bun bun-dep-link --github",
+  "local":"bunx --bun bun-dep-link --local",
+  "pre-commit": "bun github && bun test && bunx dep-link"
 }
 ```

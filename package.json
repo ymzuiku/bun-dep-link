@@ -1,6 +1,6 @@
 {
   "name": "bun-dep-link",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "private": false,
   "types": "esm/index.d.ts",
   "main": "esm/index.js",
@@ -22,7 +22,7 @@
     "url": "git+https://github.com/ymzuiku/bun-dep-link.git"
   },
   "bin": {
-    "bun-dep": "esm/index.js"
+    "bun-dep-link": "esm/index.js"
   },
   "homepage": "git+https://github.com/ymzuiku/bun-dep-link.git",
   "license": "MIT",
