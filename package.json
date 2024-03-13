@@ -1,6 +1,6 @@
 {
-  "name": "indexed-redis",
-  "version": "0.0.9",
+  "name": "bun-dep-link",
+  "version": "0.0.1",
   "private": false,
   "types": "esm/index.d.ts",
   "main": "esm/index.js",
@@ -16,26 +16,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ymzuiku/indexed-redis.git"
+    "url": "git+https://github.com/ymzuiku/bun-dep-link.git"
   },
   "bugs": {
-    "url": "git+https://github.com/ymzuiku/indexed-redis.git"
+    "url": "git+https://github.com/ymzuiku/bun-dep-link.git"
   },
-  "homepage": "git+https://github.com/ymzuiku/indexed-redis.git",
+  "bin": {
+    "bun-dep": "esm/index.js"
+  },
+  "homepage": "git+https://github.com/ymzuiku/bun-dep-link.git",
   "license": "MIT",
   "devDependencies": {
     "@biomejs/biome": "^1.6.1",
-    "@happy-dom/global-registrator": "^13.5.0",
     "@types/bun": "latest",
-    "@types/throttle-debounce": "^5.0.2",
     "bun-plugin-dts": "^0.2.1",
     "husky": "^9.0.11",
     "typescript": "^5.3.2"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  },
-  "dependencies": {
-    "throttle-debounce": "^5.0.0"
   }
 }
