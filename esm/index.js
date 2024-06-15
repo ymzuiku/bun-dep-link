@@ -3,8 +3,8 @@
 
 // lib/index.ts
 import * as fs from "fs/promises";
-var {$ } = globalThis.Bun;
 import path from "path";
+var {$ } = globalThis.Bun;
 async function start() {
   const pkgString = (await fs.readFile(p("package.json"), "utf8")).toString();
   const pkg = JSON.parse(pkgString);
@@ -47,10 +47,10 @@ async function start() {
   }
   await fs.writeFile(p("package.json"), JSON.stringify(pkg, null, 2));
   if (changed) {
-    await $`bun install`;
+    await $`bun update`;
   }
 }
 var p = (...args) => path.resolve(process.cwd(), ...args);
 start();
 
-//# debugId=02BF7D928F88A13B64756e2164756e21
+//# debugId=FED0368D68EE84F664756e2164756e21

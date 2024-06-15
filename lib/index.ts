@@ -1,8 +1,8 @@
 #!/usr/bin/env bun
 
 import * as fs from "node:fs/promises";
-import { $ } from "bun";
 import path from "node:path";
+import { $ } from "bun";
 
 const p = (...args: string[]) => path.resolve(process.cwd(), ...args);
 
@@ -61,7 +61,7 @@ async function start() {
 
 	await fs.writeFile(p("package.json"), JSON.stringify(pkg, null, 2));
 	if (changed) {
-		await $`bun install`;
+		await $`bun update`;
 	}
 }
 
